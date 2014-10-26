@@ -1,3 +1,7 @@
 /.kdev4/Mars2DGameEngine.kdev4
 /Mars2DGameEngine.kdev4
 /Makefile
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+libmars2d.so
