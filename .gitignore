@@ -6,3 +6,4 @@
 cmake_install.cmake
 libmars2d.so
 /install_manifest.txt
+/rc/*
