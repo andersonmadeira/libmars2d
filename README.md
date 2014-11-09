@@ -1,4 +1,4 @@
-bmars2d
+libmars2d
 =========
 *A Simple Game Engine for C++*
 
