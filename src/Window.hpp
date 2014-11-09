@@ -15,6 +15,7 @@ namespace mars2d {
         void setTitle(const std::string& title) throw();
         std::string getTitle() const throw();
         void update() throw();
+        void sdlFillColor(Uint8 red, Uint8 green, Uint8 blue) throw();
         ~Window();
     private:
         Window(const std::string& title, Uint16 width, Uint16 height) throw(Exception);

@@ -27,6 +27,11 @@ namespace mars2d {
             SDL_UpdateWindowSurface(win);
     }
     
+    void Window::sdlFillColor(Uint8 red, Uint8 green, Uint8 blue) throw() {
+        SDL_Surface* sur = SDL_GetWindowSurface(win);
+        SDL_FillRect(sur, NULL, SDL_MapRGB(sur->format, red, green, blue));
+    }
+    
     Window::~Window() {
         cout << "~Window('" << this->getTitle() << "');" << endl;
         if (win) {
