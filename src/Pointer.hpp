@@ -46,7 +46,7 @@ namespace mars2d {
         }
         Pointer<Type>& operator=(const Pointer<Type>& ptr) {
             // avoid self assignment
-            if (this != ptr) {
+            if (this != &ptr) {
                 // dec/frees this pointer
                 if (counter->dec() == 0) {
                     delete data;
