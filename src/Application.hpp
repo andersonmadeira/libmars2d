@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include "Exception.hpp"
+#include <string>
 #include "Pointer.hpp"
 #include "Window.hpp"
 
@@ -16,10 +17,11 @@ namespace mars2d {
             ALL = SDL_INIT_EVERYTHING
         };
         Application(Flags flags) throw(Exception); // may throw exception
+        void delay(Uint32 ms) throw();
         ~Application();
-        static Pointer<Window> createWindow(const std::string& title, Uint16 width, Uint16 height) throw(Exception) {
+        static Window* createWindow(const std::string& title, Uint16 width, Uint16 height) throw(Exception) {
             return new Window(title, width, height); 
-        };
+        }
     };
 }
 

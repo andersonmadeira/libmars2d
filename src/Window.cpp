@@ -2,12 +2,11 @@
 
 namespace mars2d {
     Window::Window(const std::string& title, Uint16 width, Uint16 height) throw(Exception) {
-        Exception ex;
         this->title = title;
         win = NULL;
         if ((win = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED,
         SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN)) == NULL) {
-            throw ex;
+            throw Exception();
         }
         cout << "Window('" << title << "');" << endl;
     }
@@ -24,18 +23,16 @@ namespace mars2d {
     }
     
     void Window::update() throw() {
-        if (win) {
+        if (win)
             SDL_UpdateWindowSurface(win);
-        }
     }
     
     Window::~Window() {
-        cout << "~Window('" << title << "')";
+        cout << "~Window('" << this->getTitle() << "');" << endl;
         if (win) {
             SDL_DestroyWindow(win);
-            cout << "Destroyed!";
+            cout << "-> Window destroyed!";
         }
-        cout << endl;
     }
 
 }

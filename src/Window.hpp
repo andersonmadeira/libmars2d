@@ -3,24 +3,23 @@
 
 #include <SDL2/SDL.h>
 #include <string>
-using std::string;
 #include <iostream>
-using std::cout;
 using std::endl;
+using std::cout;
 #include "Exception.hpp"
 #include "Pointer.hpp"
 
 namespace mars2d {
     class Window {
     public:
-        void setTitle(const string& title) throw();
-        string getTitle() const throw();
+        void setTitle(const std::string& title) throw();
+        std::string getTitle() const throw();
         void update() throw();
         ~Window();
     private:
-        Window(const string& title, Uint16 width, Uint16 height) throw(Exception);
+        Window(const std::string& title, Uint16 width, Uint16 height) throw(Exception);
         SDL_Window* win;
-        string title;
+        std::string title;
         
     friend class Application;
     };
