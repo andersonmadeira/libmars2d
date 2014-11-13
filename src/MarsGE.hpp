@@ -5,6 +5,7 @@
 #include "Pointer.hpp"
 #include "Application.hpp"
 #include "Window.hpp"
+#include "Color.hpp"
 #include "Math.hpp"
 
 #endif
