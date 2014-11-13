@@ -14,18 +14,22 @@ set( MarsGE_SRC_FILES
     src/Window.cpp
     src/Math/Point.cpp
     src/Math/Vector.cpp
+    src/Math/Line.cpp
 )
 
-# define var - header files
+# define MAIN header files
 set( MarsGE_HPP_FILES
     src/MarsGE.hpp
     src/Math.hpp
     src/Exception.hpp
     src/Pointer.hpp
+    src/Color.hpp
     src/Application.hpp
     src/Window.hpp
+    src/Line.hpp
 )
 
+# define MATH header files
 set( MarsGE_Math_HPP_FILES
     src/Math/Utility.hpp
     src/Math/Point.hpp

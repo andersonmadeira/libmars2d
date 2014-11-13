@@ -11,6 +11,23 @@ namespace MarsGE {
             throw Exception();
         }
         cout << "Window('" << title << "');" << endl;
+        
+        // Create an OpenGL context associated with the window.
+        glContext = SDL_GL_CreateContext(win);
+        
+        // vsync
+        SDL_GL_SetSwapInterval(1);
+        
+        glClearColor(0,0,0,1);
+        glClear(GL_COLOR_BUFFER_BIT);
+        SDL_GL_SwapWindow(win);
+        
+        //Initialize Projection Matrix
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        //Initialize Modelview Matrix
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
     }
     
     std::string Window::getTitle() const throw() {
@@ -18,69 +35,79 @@ namespace MarsGE {
     }
     
     Uint32 Window::getId() const throw() {
-        return win ? SDL_GetWindowID(win) : -1;
+        return SDL_GetWindowID(win);
     }
     
     Math::Point Window::getPosition() const throw() {
         int x=-1,y=-1;
         
-        if (win) SDL_GetWindowPosition(win, &x, &y);
+        SDL_GetWindowPosition(win, &x, &y);
         
         return Math::Point(x, y);
     }
     
     void Window::setPosition(const Math::Point& pos) throw() {
         int x = pos.x, y = pos.y;
-        if (win) SDL_SetWindowPosition(win, x, y);
+        SDL_SetWindowPosition(win, x, y);
     }
     
     void Window::setTitle(const std::string& title) throw() {
-        if (win) {
-            this->title = title;
-            SDL_SetWindowTitle(win, title.c_str());
-        }
+        this->title = title;
+        SDL_SetWindowTitle(win, title.c_str());
     }
     
     Math::Size Window::getSize() const throw() {
         int w=0, h=0;
-        if (win)
-            SDL_GetWindowSize(win, &w, &h);
+        SDL_GetWindowSize(win, &w, &h);
         return Math::Size(w, h);
     }
     
     void Window::setSize(const Math::Size& size) throw() {
-        if (win) SDL_SetWindowSize(win, size.width, size.height);
+        SDL_SetWindowSize(win, size.width, size.height);
     }
     
     void Window::setSize(Uint32 width, Uint32 height) throw() {
-        if (win) SDL_SetWindowSize(win, width, height);
+        SDL_SetWindowSize(win, width, height);
     }
     
     void Window::hide() throw() {
-        if (win) SDL_HideWindow(win);
+        SDL_HideWindow(win);
     }
     
     void Window::show() throw() {
-        if (win) SDL_ShowWindow(win);
+        SDL_ShowWindow(win);
     }
     
     void Window::raise() throw() {
-        if (win) SDL_RaiseWindow(win);
+        SDL_RaiseWindow(win);
     }
     
     void Window::update() throw() {
-        if (win)
-            SDL_UpdateWindowSurface(win);
+        SDL_GL_SwapWindow(win);
     }
     
-    void Window::sdlFillColor(Uint8 red, Uint8 green, Uint8 blue) throw() {
-        SDL_Surface* sur = SDL_GetWindowSurface(win);
-        SDL_FillRect(sur, NULL, SDL_MapRGB(sur->format, red, green, blue));
+    void Window::clear() throw() {
+        SDL_GL_MakeCurrent(win, glContext);
+        glClear(GL_COLOR_BUFFER_BIT);
+    }
+    
+    void Window::setClearColor(const Color& c) throw() {
+        SDL_GL_MakeCurrent(win, glContext);
+        glClearColor(c.red, c.green, c.blue, c.alpha);
+    }
+    
+    void Window::draw(const Math::Point& p) throw() {
+        // pass
+    }
+    
+    void Window::draw(const Math::Line& l) throw() {
+        // pass
     }
     
     Window::~Window() {
         cout << "~Window('" << this->getTitle() << "');" << endl;
         if (win) {
+            SDL_GL_DeleteContext(glContext);
             SDL_DestroyWindow(win);
             cout << "-> Window destroyed!";
         }

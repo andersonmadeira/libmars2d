@@ -2,6 +2,7 @@
 #define __MARSGAMEENGINE_APPLICATION_HPP__
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
 #include "Exception.hpp"
 #include <string>
 #include "Pointer.hpp"
@@ -22,6 +23,8 @@ namespace MarsGE {
         static Window* createWindow(const std::string& title, Uint16 width, Uint16 height) throw(Exception) {
             return new Window(title, width, height); 
         }
+    private:
+        SDL_GLContext glContext;
     };
 }
 
