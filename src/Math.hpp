@@ -4,5 +4,6 @@
 #include "Math/Utility.hpp"
 #include "Math/Point.hpp"
 #include "Math/Vector.hpp"
+#include "Math/Size.hpp"
 
 #endif

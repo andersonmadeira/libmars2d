@@ -30,6 +30,7 @@ set( MarsGE_Math_HPP_FILES
     src/Math/Utility.hpp
     src/Math/Point.hpp
     src/Math/Vector.hpp
+    src/Math/Size.hpp
 )
 
 set(CMAKE_BUILD_TYPE Release)
