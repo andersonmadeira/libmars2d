@@ -1,7 +1,7 @@
-#ifndef __MARS2D_POINTER_HPP__
-#define __MARS2D_POINTER_HPP__
+#ifndef __MARSGAMEENGINE_POINTER_HPP__
+#define __MARSGAMEENGINE_POINTER_HPP__
 
-namespace mars2d {
+namespace MarsGE {
     /** \class RefCounter 
      * \brief Reference counter class used by the smart pointer to count refs
      * 

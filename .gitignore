@@ -7,3 +7,6 @@ cmake_install.cmake
 libmars2d.so
 /install_manifest.txt
 /rc/*
+/.kdev4/MarsGameEngine.kdev4
+/MarsGameEngine.kdev4
+/libMarsGE.so

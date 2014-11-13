@@ -1,5 +1,5 @@
-#ifndef __MARS2D_APPLICATION_HPP__
-#define __MARS2D_APPLICATION_HPP__
+#ifndef __MARSGAMEENGINE_APPLICATION_HPP__
+#define __MARSGAMEENGINE_APPLICATION_HPP__
 
 #include <SDL2/SDL.h>
 #include "Exception.hpp"
@@ -7,7 +7,7 @@
 #include "Pointer.hpp"
 #include "Window.hpp"
 
-namespace mars2d {
+namespace MarsGE {
     class Application {
     public:
         // static stuff

@@ -1,6 +1,6 @@
 #include "Window.hpp"
 
-namespace mars2d {
+namespace MarsGE {
     Window::Window(const std::string& title, Uint16 width, Uint16 height) throw(Exception) {
         this->title = title;
         win = NULL;

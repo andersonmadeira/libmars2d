@@ -1,8 +1,9 @@
-#include <Mars2D/Pointer.hpp>
+#include <MarsGE/Pointer.hpp>
 #include <string>
 #include <iostream>
 
 using namespace std;
+using namespace MarsGE;
 
 class Person {
     public:
@@ -13,7 +14,7 @@ class Person {
         ~Person() {
             cout << "~Person('" << name << "');" << endl; 
         }
-        static void display(mars2d::Pointer<Person> p) {
+        static void display(marsge::Pointer<Person> p) {
             cout << p->name << endl;
         }
     private:
@@ -21,9 +22,9 @@ class Person {
 };
 
 int main(int argc, char** argv) {
-    mars2d::Pointer<Person> x(new Person("Bob"));
+    Pointer<Person> x(new Person("Bob"));
     {
-        mars2d::Pointer<Person> y = x,
+        Pointer<Person> y = x,
                                 z = new Person("Pat"),
                                 w = z,
                                 u;

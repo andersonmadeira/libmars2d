@@ -1,6 +1,6 @@
 #include "Application.hpp"
 
-namespace mars2d {
+namespace MarsGE {
     Application::Application(Flags flags) throw(Exception) {
         cout << "Application();" << endl;
         if (SDL_Init(flags) < 0) {

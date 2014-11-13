@@ -1,9 +1,9 @@
-#include <Mars2D/Mars2D.hpp>
+#include <MarsGE/MarsGE.hpp>
 #include <iostream>
 using std::cout;
 using std::endl;
 
-using namespace mars2d;
+using namespace MarsGE;
 
 int main(int argc, char** argv) {
     Pointer<Window> win1, win2;

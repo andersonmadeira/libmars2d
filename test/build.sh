@@ -1,1 +1,1 @@
-g++ $1 -Wall -o out -lGL -lSDL2 -lmars2d
+g++ $1 -Wall -o out -lGL -lSDL2 -lMarsGE -L../

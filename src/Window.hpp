@@ -1,5 +1,5 @@
-#ifndef __MARS2D_WINDOW_HPP__
-#define __MARS2D_WINDOW_HPP__
+#ifndef __MARSGAMEENGINE_WINDOW_HPP__
+#define __MARSGAMEENGINE_WINDOW_HPP__
 
 #include <SDL2/SDL.h>
 #include <string>
@@ -9,7 +9,7 @@ using std::cout;
 #include "Exception.hpp"
 #include "Pointer.hpp"
 
-namespace mars2d {
+namespace MarsGE {
     class Window {
     public:
         void setTitle(const std::string& title) throw();
