@@ -22,6 +22,10 @@ namespace MarsGE {
         Math::Size getSize() const throw();
         void setSize(const Math::Size& size) throw();
         void setSize(Uint32 width, Uint32 height) throw();
+        void hide() throw();
+        void show() throw();
+        /// Bring window to front, above other windows and grab focus.
+        void raise() throw();
         void update() throw();
         void sdlFillColor(Uint8 red, Uint8 green, Uint8 blue) throw();
         ~Window();

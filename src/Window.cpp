@@ -60,6 +60,18 @@ namespace MarsGE {
         if (win) SDL_SetWindowSize(win, width, height);
     }
     
+    void Window::hide() throw() {
+        if (win) SDL_HideWindow(win);
+    }
+    
+    void Window::show() throw() {
+        if (win) SDL_ShowWindow(win);
+    }
+    
+    void Window::raise() throw() {
+        if (win) SDL_RaiseWindow(win);
+    }
+    
     void Window::update() throw() {
         if (win)
             SDL_UpdateWindowSurface(win);
